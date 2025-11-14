@@ -1,0 +1,48 @@
+ 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+guardbot/
+
+# Models and large files
+*.pth
+*.pt
+*.onnx
+*.pb
+*.h5
+*.weights
+models/
+*.safetensors
+
+# Face embeddings and data
+known_faces/
+*.pkl
+*.npy
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
