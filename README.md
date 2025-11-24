@@ -97,26 +97,28 @@ text
 Download and install **CUDA 12.1** from [NVIDIA's website](https://developer.nvidia.com/cuda-downloads).
 
 Verify installation:
-``````bash
+```bash
 nvcc --version
 nvidia-smi
-Step 3: Install Ollama
+```
+
+### Step 3: Install Ollama
 Download and install Ollama from ollama.ai.
 
 Pull the Llama3.1 model:
-bash
+```bash
 ollama pull llama3.1:8b
-
-text
+```
 
 Verify:
-``````bash
+```bash
 ollama list
-Step 4: Install Python Dependencies
-bash
-pip install -r requirements.txt
+```
 
-text
+### Step 4: Install Python Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 **Key dependencies:**
 - torch==2.0.1+cu121 (PyTorch with CUDA 12.1)
@@ -132,15 +134,14 @@ text
 
 ### Step 5: Install PyTorch with CUDA Support
 
-``````bash
+```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 Verify GPU access:
 python
 import torch
 print(torch.cuda.is_available()) # Should print: True
 print(torch.version.cuda) # Should print: 12.1
-
-text
+```
 
 ---
 
@@ -164,9 +165,9 @@ Press 'q' to finish
 Faces are saved to data/embeddings/known_faces.pkl.
 
 2. Run the Guard Bot
+```bash
 python main.py
-
-text
+```
 
 ### 3. Select Personality
 
@@ -220,15 +221,11 @@ AI-Agent-Bot/
 ├── requirements.txt # Python dependencies
 └── README.md # This file
 
-text
-
-***
-
 ## ⚙️ Configuration
 
 ### Escalation Timing (Edit `main.py`)
 
-```python```
+```python
 ESCALATION_TIMING = {
     'level1_presence': 2,   # Trigger L1 after 2s
     'level2_presence': 4,   # Trigger L2 after 4s
@@ -244,7 +241,7 @@ CONFIDENCE_THRESHOLD = 0.75     # Minimum confidence for "trusted"
 
 ### Whisper Anti-Hallucination Settings
 
-```python```
+```python
 whisper_model.transcribe(
     audio,
     no_speech_threshold=0.8,          # Silence detection
@@ -254,15 +251,12 @@ whisper_model.transcribe(
 )
 ```
 
----
 
 ## 🔍 How It Works
 
 ### State Machine Flow
 
 IDLE → M1 (Voice) → M2 (Face) → M3 (Escalation) → IDLE
-
-text
 
 1. **IDLE:** Personality selection, model loading
 2. **M1_VOICE:** Continuous audio monitoring for activation phrase
@@ -282,7 +276,6 @@ text
 
 This specific order prevents CUDA out-of-memory errors by loading Ollama before PyTorch claims GPU memory.
 
-***
 
 ## 🐛 Troubleshooting
 
@@ -291,9 +284,10 @@ This specific order prevents CUDA out-of-memory errors by loading Ollama before 
 **Solution:** Ensure models load in correct order (Ollama first). Restart Python kernel and try again.
 
 Clear GPU cache
+```bash
 python -c "import torch; torch.cuda.empty_cache()"
+```
 
-text
 
 ### Issue: Whisper hallucinations (e.g., "Thanks for watching!")
 
@@ -303,9 +297,10 @@ text
 
 **Solution:** Audio thread automatically pauses during TTS. If issue persists, increase pause duration in `main.py`:
 
-``````python
+```python
 self.audio_thread.stop_listening()
 time.sleep(0.5)  # Increase from 0.3 to 0.5
+```
 Issue: Face recognition too slow (<15 FPS)
 Solution:
 
@@ -321,13 +316,11 @@ Solution: Already fixed with explicit anti-hallucination prompts. Check that con
 Issue: PyTorch not detecting GPU
 Solution: Reinstall PyTorch with correct CUDA version:
 
-bash
+```bash
 pip uninstall torch torchvision torchaudio
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
 
-text
-
----
 
 ## 📊 Performance Metrics
 
@@ -338,7 +331,6 @@ text
 - **Face Recognition Accuracy:** 89% confidence on known faces
 - **Voice Command Similarity:** 0.84-0.89 on valid commands
 
----
 
 ## 🔒 Security Features
 
@@ -348,7 +340,6 @@ text
 - **Accumulated timer** prevents false escalations from brief appearances
 - **Context tracking** maintains conversation history across levels
 
----
 
 ## 🎓 Academic Context
 
@@ -359,7 +350,6 @@ This project was developed as part of **EE782 - Advanced Machine Learning** cour
 - State machine design patterns
 - Prompt engineering for LLMs
 
----
 
 ## 🤝 Contributing
 
@@ -371,13 +361,6 @@ Contributions are welcome! Please follow these guidelines:
 4. Push to branch (`git push origin feature/improvement`)
 5. Open a Pull Request
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
 
 ## 🙏 Acknowledgments
 
@@ -387,7 +370,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **NVIDIA CUDA** for GPU acceleration
 - Course instructor and TAs for guidance (EE782- Advance Machine Learning)
 
----
 
 ## 📞 Contact
 
