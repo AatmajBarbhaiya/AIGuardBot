@@ -1,8 +1,8 @@
-🤖 AI Guard Bot - Jarvis Security System
+# 🤖 AI Guard Bot - Jarvis Security System
 An intelligent, multi-modal AI security system that combines voice activation, real-time face recognition, and conversational AI to monitor and respond to intruders. Named "Jarvis," the system uses GPU-optimized deep learning models for efficient real-time operation.
 
-🎯 Features
-Voice Activation (Milestone 1)
+## 🎯 Features
+### Voice Activation (Milestone 1)
 Whisper-based speech recognition with anti-hallucination safeguards
 
 Fuzzy command matching using sequence similarity (70%) and word intersection (30%)
@@ -11,7 +11,7 @@ Activation phrases: "guard mode", "activate guard", "start security"
 
 False activation prevention with cooldown timers
 
-Face Recognition (Milestone 2)
+### Face Recognition (Milestone 2)
 Real-time face detection using FaceNet InceptionResnetV1
 
 18-20 FPS performance on RTX 4050 GPU
@@ -22,7 +22,7 @@ Multi-face simultaneous detection and classification
 
 Thread-safe camera and face processing
 
-LLM Escalation Protocol (Milestone 3)
+### LLM Escalation Protocol (Milestone 3)
 3-level escalation system for unknown intruders:
 
 Level 1 (2s): Initial contact + identity verification
@@ -39,7 +39,7 @@ Context tracking with name/purpose extraction
 
 Anti-hallucination prompt engineering
 
-System Features
+### System Features
 100% GPU utilization (6.4GB VRAM optimized)
 
 State machine architecture with clean transitions
@@ -50,7 +50,7 @@ Thread-safe operations across audio, video, and face processing
 
 Accumulated timer with pause/reset logic for presence tracking
 
-🖥️ Hardware Requirements
+### 🖥️ Hardware Requirements
 Minimum Requirements
 GPU: NVIDIA GPU with 6GB+ VRAM (RTX 3050 or better)
 
@@ -64,7 +64,7 @@ Camera: USB webcam or built-in camera
 
 Microphone: Any USB/built-in microphone
 
-Recommended Configuration
+### Recommended Configuration
 GPU: NVIDIA RTX 4050/4060 (6-8GB VRAM)
 
 CPU: Hexa-core or better
@@ -84,13 +84,13 @@ Intel Core i7-12700H
 
 Windows 11
 
-📦 Installation
-Step 1: Clone the Repository
-bash
+## 📦 Installation
+### Step 1: Clone the Repository
+```bash
 git clone https://github.com/AatmajBarbhaiya/ai-guard-bot.git
 cd ai-guard-bot
+```
 
-text
 
 ### Step 2: Install CUDA Toolkit
 
