@@ -195,32 +195,6 @@ The system requires BOTH voice command AND trusted face for deactivation.
 
 ---
 
-## 📁 Project Structure
-
-AI-Agent-Bot/
-├── data/
-│ ├── embeddings/
-│ │ └── known_faces.pkl # Enrolled face embeddings
-│ ├── test_images/ # Test images for validation
-│ └── trusted_faces/ # Trusted face image storage
-├── logs/
-│ └── agent.log # System logs
-├── milestones/
-│ ├── milestone1_voice_activation.py # M1: Voice activation
-│ ├── milestone2_face_recognition.py # M2: Face recognition
-│ └── milestone3_llm.py # M3: LLM integration
-├── utils/
-│ ├── audio_utils.py # Audio processing & VAD
-│ ├── config.py # Configuration constants
-│ ├── conversation_manager.py # Context tracking
-│ ├── numpy_compat.py # NumPy compatibility fixes
-│ ├── state_manager.py # State machine logic
-│ └── video_utils.py # Video capture utilities
-├── main.py # Main application entry point
-├── face_enrollment.py # Face enrollment script
-├── requirements.txt # Python dependencies
-└── README.md # This file
-
 ## ⚙️ Configuration
 
 ### Escalation Timing (Edit `main.py`)
